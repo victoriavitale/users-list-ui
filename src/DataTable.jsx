@@ -2,6 +2,9 @@
 
 var FixedDataTable = require('fixed-data-table');
 var React = require('react');
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const history = createBrowserHistory({forceRefresh:true});
 
 const {Table, Column, Cell} = FixedDataTable;
 
@@ -71,6 +74,10 @@ class DataTable extends React.Component {
     });
   }
 
+  openDetailsUser(e, index) {    
+    window.location.href = "/#/user/" + this.state.users[index]._id;
+  }
+
   render() {
 
     var {users, usersFiltered} = this.state;
@@ -86,6 +93,7 @@ class DataTable extends React.Component {
         <input onChange={this._onFilterChange} placeholder="Filter by First Name"/>
         <br/>
         <Table
+          onRowClick={this.openDetailsUser.bind(this)}
           rowHeight={50}
           rowsCount={Object.keys(dataUsers).length}
           headerHeight={50}
