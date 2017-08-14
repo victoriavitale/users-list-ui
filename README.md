@@ -17,7 +17,7 @@ https://facebook.github.io/fixed-data-table/
 A package called react-router to handle routing in React.
 https://github.com/ReactTraining/react-router/tree/master/packages/react-router
 
-#How to run the application
+# How to run the application
 
 ## Install dependencies
 
