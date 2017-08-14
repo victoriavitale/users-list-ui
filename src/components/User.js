@@ -21,10 +21,10 @@ class User extends Component {
         let user = this.state.user;
 
         return (
-            <div>
-                <img src={user.avatar} alt="" />
-                <h1>Name: {user.firstName + ' ' + user.lastName}</h1>
-                <p>{user.bio}</p>
+            <div className="user-detail">
+                <img src={user.avatar} alt="User avatar" />
+                <h1>{user.firstName + ' ' + user.lastName}</h1>
+                <h2>{user.bio}</h2>
             </div>
         );
     }

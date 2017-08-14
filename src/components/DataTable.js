@@ -74,28 +74,28 @@ class DataTable extends React.Component {
 
     return (
       <div>
-        <input onChange={this._onFilterChange} placeholder="Filter by name"/>
+        <input onChange={this._onFilterChange} placeholder="Filter by name" className="search-input"/>
         <br/>
         <Table
           onRowClick={this.openDetailsUser.bind(this)}
-          rowHeight={50}
+          rowHeight={70}
           rowsCount={Object.keys(dataUsers).length}
           headerHeight={50}
-          width={350}
-          height={500}>
+          width={500}
+          height={1200}>
 
           <Column 
             cell={< ImageCell data={dataUsers} col="avatar" />} 
             fixed={true} 
-            width={50} />
+            width={70} />
 
           <Column 
-            header={<Cell> First and Last Name </Cell>} 
+            header={<Cell> User </Cell>} 
             cell={< TextCell 
             data={dataUsers}
             colFirstName = "firstName" colLastName = "lastName" />}
             fixed={true}
-            width={300}/>
+            width={430}/>
         </Table>
       </div>
     );

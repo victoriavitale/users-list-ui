@@ -1,2 +1,18 @@
 // This is the top-level scss file. Import all other files in here.
 @import 'fixed-data-tables';
+@import 'header';
+@import 'user-detail';
+
+body{
+    width:100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-input{
+    margin: 15px 15px 15px 35px;
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 15px;
+}
