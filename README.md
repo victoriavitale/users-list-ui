@@ -3,7 +3,7 @@
 A small app displaying a list of users with a search field and a detailed info view.
 
 ## URL
-
+https://users-list-ui.now.sh
 
 ## Resources
 This app was built with React using the following resources:

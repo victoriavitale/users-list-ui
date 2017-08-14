@@ -1,17 +1,17 @@
 {
-  "name": "react-router-webpack-example",
-  "version": "1.0.1",
-  "description": "Example using react, webpack and css modules...",
+  "name": "users-list-ui",
+  "version": "1.0.0",
+  "description": "A small app displaying a list of users with a search field and a detailed info view.",
   "scripts": {
     "dev": "NODE_ENV=dev webpack-dev-server --port 3000 --inline --content-base . --hot",
     "build": "NODE_ENV=production webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/StevenIseki/react-router-webpack-example"
+    "url": "https://github.com/victoriavitale/users-list-ui"
   },
-  "author": "Steven Iseki <stevenisekimartin@gmail.com>",
-  "license": "MIT",
+  "author": "Victoria Vitale <m.v.vitale@gmail.com>",
+  "license": "ISC",
   "dependencies": {
     "autoprefixer": "^6.5.2",
     "autoprefixer-loader": "^3.2.0",
