@@ -1,19 +1,9 @@
-"use strict";
-
 var FixedDataTable = require('fixed-data-table');
 var React = require('react');
-import createBrowserHistory from 'history/createBrowserHistory';
-
-const history = createBrowserHistory({forceRefresh:true});
 
 const {Table, Column, Cell} = FixedDataTable;
 
-const ImageCell = ({
-  rowIndex,
-  data,
-  col,
-  ...props
-}) => (
+const ImageCell = ({ rowIndex, data, col, ...props }) => (
   <div>
     <img style={{
       width: '100%'
@@ -21,13 +11,7 @@ const ImageCell = ({
   </div>
 );
 
-const TextCell = ({
-  rowIndex,
-  data,
-  colFirstName,
-  colLastName,
-  ...props
-}) => (
+const TextCell = ({ rowIndex, data, colFirstName, colLastName, ...props }) => (
   <Cell {...props}>
     {data[rowIndex][colFirstName] + ' ' + data[rowIndex][colLastName]}
   </Cell>
@@ -46,7 +30,7 @@ class DataTable extends React.Component {
   }
 
   componentWillMount() {
-    fetch('http://localhost:5000/users').then((response) => {
+    fetch('https://users-list-api.now.sh/users').then((response) => {
       return response.json()
     }).then((users) => {
       this.setState({users: users})
@@ -90,7 +74,7 @@ class DataTable extends React.Component {
 
     return (
       <div>
-        <input onChange={this._onFilterChange} placeholder="Filter by First Name"/>
+        <input onChange={this._onFilterChange} placeholder="Filter by name"/>
         <br/>
         <Table
           onRowClick={this.openDetailsUser.bind(this)}

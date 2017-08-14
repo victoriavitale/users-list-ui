@@ -1,28 +1,29 @@
-var path = require('path');
-var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    './src/index.jsx'
-  ],
+  entry: './index.js',
+  devtool: 'inline-source-map',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/build/'
+    path: path.join(__dirname, '/build/'),
+    filename: '/bundle.js',
+    publicPath: ''
   },
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
-        loaders: ['babel-loader'],
-        include: path.join(__dirname, 'src')
-      },
-      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader?presets[]=es2015&presets[]=react'
+      }, {
         test: /\.scss$/,
         loaders: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
-  }
+  },
+  devServer: {
+    historyApiFallback: true
+  },
+  plugins: [new HtmlWebpackPlugin({title: 'Example', template: './index.html'}), new UglifyJSPlugin()]
 }

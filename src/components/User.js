@@ -10,7 +10,7 @@ class User extends Component {
     }
 
     componentWillMount() {
-        fetch('http://localhost:5000/users/' + this.props.match.params.id).then((response) => {
+        fetch('https://users-list-api.now.sh/users/' + this.props.params.id).then((response) => {
             return response.json();
         }).then((user) => {
             this.setState({user: user})
